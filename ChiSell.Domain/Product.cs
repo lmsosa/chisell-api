@@ -4,7 +4,11 @@ using System.Text;
 
 namespace ChiSell.Domain
 {
-    class Product
+    public class Product
     {
+        public Guid Id { get; set; }
+
+        public string Name { get; set; }
+
     }
 }
