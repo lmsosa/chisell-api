@@ -19,7 +19,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChiSell.Domain", "ChiSell.D
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChiSell.Api", "ChiSell.Api\ChiSell.Api.csproj", "{DF1AD217-C222-4EEF-A06F-F57D81102093}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChiSell.Application", "ChiSell.Application\ChiSell.Application.csproj", "{3190630E-5617-4963-B976-AAF02697E1B9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChiSell.Application", "ChiSell.Application\ChiSell.Application.csproj", "{3190630E-5617-4963-B976-AAF02697E1B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChiSell.Data", "ChiSell.Data\ChiSell.Data.csproj", "{7B2255F5-BE31-4D90-97CB-AE984B08F6FC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{3190630E-5617-4963-B976-AAF02697E1B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3190630E-5617-4963-B976-AAF02697E1B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3190630E-5617-4963-B976-AAF02697E1B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B2255F5-BE31-4D90-97CB-AE984B08F6FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B2255F5-BE31-4D90-97CB-AE984B08F6FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B2255F5-BE31-4D90-97CB-AE984B08F6FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B2255F5-BE31-4D90-97CB-AE984B08F6FC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -50,6 +56,7 @@ Global
 		{708CCC06-FC2D-44DA-A51A-268A959E4ADE} = {AA854C1D-2791-4AA6-811C-6E84B730D07D}
 		{DF1AD217-C222-4EEF-A06F-F57D81102093} = {3E95AE22-8A19-4D01-A08F-89320CD14DAE}
 		{3190630E-5617-4963-B976-AAF02697E1B9} = {AA854C1D-2791-4AA6-811C-6E84B730D07D}
+		{7B2255F5-BE31-4D90-97CB-AE984B08F6FC} = {8E3CF478-F5A5-4FB3-ACB5-9677677B7EAD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BE118030-36C5-40B3-AC7F-619A79BC9406}

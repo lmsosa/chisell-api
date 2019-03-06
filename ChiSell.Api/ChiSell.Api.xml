@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ChiSell.Api</name>
+    </assembly>
+    <members>
+        <member name="T:ChiShell.Api.Controllers.ProductsController">
+            <summary>
+            Product Controller
+            </summary>
+        </member>
+        <member name="M:ChiShell.Api.Controllers.ProductsController.#ctor(MediatR.IMediator)">
+            <summary>
+            Creates a new instance of <see cref="!:CurriculumController"/>
+            </summary>
+            <param name="mediator"></param>
+        </member>
+        <member name="M:ChiShell.Api.Controllers.ProductsController.GetAll">
+            <summary>
+            Returns all products
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ChiSell.Api.Extensions.AutoMapperConfiguration">
+            <summary>
+            Extensions for AutoMapper configuration
+            </summary>
+        </member>
+        <member name="M:ChiSell.Api.Extensions.AutoMapperConfiguration.AddAutoMapperConfig(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Type[])">
+            <summary>
+            Loads existing AutoMapper profiles from an assembly
+            </summary>
+            <param name="services"></param>
+            <param name="assemblyTypes"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ChiSell.Api.Extensions.SwaggerExtensions">
+            <summary>
+            Extensions for Swagger
+            </summary>
+        </member>
+        <member name="M:ChiSell.Api.Extensions.SwaggerExtensions.AddSwaggerDocumentation(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Adds Swagger Documentation
+            </summary>
+            <param name="services"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

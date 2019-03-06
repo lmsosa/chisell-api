@@ -1,17 +1,44 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using ChiSell.Api.Extensions;
+using ChiSell.Application.Infrastructure;
+using ChiSell.Application.Products.Queries.GetProductsList;
+using ChiSell.Data.Context;
+using MediatR;
+using MediatR.Pipeline;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Swashbuckle.AspNetCore.SwaggerUI;
+using System;
 
 namespace ChiShell.Api
 {
     public class Startup
     {
+        public Startup(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
+
+        public IConfiguration Configuration { get; }
+
+
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc()
                 .AddNewtonsoftJson();
+
+            services.AddEntityFrameworkSqlServer()
+                .AddDbContext<ChiSellContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("ChiSell")));
+
+            services.AddAutoMapperConfig(new Type[] { typeof(Startup), typeof(MappingConfig) });
+            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestPreProcessorBehavior<,>));
+            services.AddMediatR(typeof(GetProductsListQuery).Assembly);
+            services.AddSwaggerDocumentation();
 
         }
 
@@ -36,6 +63,20 @@ namespace ChiShell.Api
             });
 
             app.UseAuthorization();
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                // Sets Swagger UI route on root, "GET {baseUrl}/".
+                c.RoutePrefix = string.Empty;
+                c.SwaggerEndpoint(
+                    "/swagger/v1/swagger.json",
+                    "swagger name");
+
+                c.DocExpansion(DocExpansion.None);
+            });
+
+
         }
     }
 }
