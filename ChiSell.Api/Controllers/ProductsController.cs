@@ -47,7 +47,6 @@ namespace ChiShell.Api.Controllers
         {
             var result = await _mediator.Send(new GetProductsListQuery());
             return result;
-
         }
 
         #endregion
