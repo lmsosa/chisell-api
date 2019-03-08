@@ -1,5 +1,5 @@
-﻿using ChiSell.Application.Products.Models;
-using ChiSell.Application.Products.Queries.GetProductsList;
+﻿using ChiSell.Application.Orders.Models;
+using ChiSell.Application.Orders.Queries.GetOrdersList;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -9,12 +9,12 @@ using System.Threading.Tasks;
 namespace ChiShell.Api.Controllers
 {
     /// <summary>
-    /// Products Controller
+    /// Orders Controller
     /// </summary>
     [Route("api/[controller]")]
     [Produces("application/json")]
     [ApiController]
-    public class ProductsController : ControllerBase
+    public class OrdersController : ControllerBase
     {
         #region Fields
 
@@ -25,10 +25,10 @@ namespace ChiShell.Api.Controllers
         #region Constructor
 
         /// <summary>
-        /// Creates a new instance of <see cref="ProductsController"/>
+        /// Creates a new instance of <see cref="OrdersController"/>
         /// </summary>
         /// <param name="mediator"></param>
-        public ProductsController(IMediator mediator)
+        public OrdersController(IMediator mediator)
         {
             _mediator = mediator;
         }
@@ -38,14 +38,14 @@ namespace ChiShell.Api.Controllers
         #region Endpoints
 
         /// <summary>
-        /// Returns all products
+        /// Returns all Orders
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        [ProducesResponseType(typeof(IEnumerable<ProductModel>), StatusCodes.Status200OK)]
-        public async Task<ActionResult<IEnumerable<ProductModel>>> GetAll()
+        [ProducesResponseType(typeof(IEnumerable<OrderModel>), StatusCodes.Status200OK)]
+        public async Task<ActionResult<IEnumerable<OrderModel>>> GetAll()
         {
-            var result = await _mediator.Send(new GetProductsListQuery());
+            var result = await _mediator.Send(new GetOrdersListQuery());
             return result;
         }
 

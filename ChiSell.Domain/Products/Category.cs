@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ChiSell.Domain
+namespace ChiSell.Domain.Products
 {
     public class Category
     {

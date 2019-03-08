@@ -1,5 +1,7 @@
 ﻿using ChiSell.Data.Seed;
-using ChiSell.Domain;
+using ChiSell.Domain.Orders;
+using ChiSell.Domain.Payment;
+using ChiSell.Domain.Products;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
@@ -14,7 +16,11 @@ namespace ChiSell.Data.Context
             _configuration = configuration;
         }
 
-        public DbSet<Product> Products { get; set; }
+        public DbSet<Product> Products { get; set; } = default!;
+
+        public DbSet<Order> Orders { get; set; } = default!;
+
+        public DbSet<Payment> Payments { get; set; } = default!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -27,7 +33,7 @@ namespace ChiSell.Data.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-           new SeedData().Seed(modelBuilder);
+            new SeedData().Seed(modelBuilder);
 
             modelBuilder.ApplyConfigurationsFromAssembly(GetType().Assembly);
             base.OnModelCreating(modelBuilder);

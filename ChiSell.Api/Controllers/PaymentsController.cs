@@ -1,5 +1,5 @@
-﻿using ChiSell.Application.Products.Models;
-using ChiSell.Application.Products.Queries.GetProductsList;
+﻿using ChiSell.Application.Payments.Models;
+using ChiSell.Application.Payments.Queries.GetPaymentsList;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -9,12 +9,12 @@ using System.Threading.Tasks;
 namespace ChiShell.Api.Controllers
 {
     /// <summary>
-    /// Products Controller
+    /// Payments Controller
     /// </summary>
     [Route("api/[controller]")]
     [Produces("application/json")]
     [ApiController]
-    public class ProductsController : ControllerBase
+    public class PaymentsController : ControllerBase
     {
         #region Fields
 
@@ -25,10 +25,10 @@ namespace ChiShell.Api.Controllers
         #region Constructor
 
         /// <summary>
-        /// Creates a new instance of <see cref="ProductsController"/>
+        /// Creates a new instance of <see cref="PaymentsController"/>
         /// </summary>
         /// <param name="mediator"></param>
-        public ProductsController(IMediator mediator)
+        public PaymentsController(IMediator mediator)
         {
             _mediator = mediator;
         }
@@ -38,14 +38,14 @@ namespace ChiShell.Api.Controllers
         #region Endpoints
 
         /// <summary>
-        /// Returns all products
+        /// Returns all Payments
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        [ProducesResponseType(typeof(IEnumerable<ProductModel>), StatusCodes.Status200OK)]
-        public async Task<ActionResult<IEnumerable<ProductModel>>> GetAll()
+        [ProducesResponseType(typeof(IEnumerable<PaymentModel>), StatusCodes.Status200OK)]
+        public async Task<ActionResult<IEnumerable<PaymentModel>>> GetAll()
         {
-            var result = await _mediator.Send(new GetProductsListQuery());
+            var result = await _mediator.Send(new GetPaymentsListQuery());
             return result;
         }
 

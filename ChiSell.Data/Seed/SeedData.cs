@@ -1,4 +1,4 @@
-﻿using ChiSell.Domain;
+﻿using ChiSell.Domain.Products;
 using Microsoft.EntityFrameworkCore;
 using System;
 
@@ -6,7 +6,7 @@ namespace ChiSell.Data.Seed
 {
     public class SeedData
     {
-        public  void Seed(ModelBuilder modelBuilder)
+        public void Seed(ModelBuilder modelBuilder)
         {
             var oregonSeller = new Seller() { Id = GetGuid(1), Name = "Oregon Inc. Items" };
 

@@ -1,4 +1,4 @@
-﻿using ChiSell.Domain;
+﻿using ChiSell.Domain.Products;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

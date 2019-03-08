@@ -1,10 +1,10 @@
 ﻿using System;
 
-namespace ChiSell.Domain
+namespace ChiSell.Domain.Common
 {
-    public class Brand
+    public class Country
     {
-        public Brand()
+        public Country()
         {
             Name = string.Empty;
         }

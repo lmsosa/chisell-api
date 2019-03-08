@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using ChiSell.Domain;
+using ChiSell.Domain.Products;
 
 namespace ChiSell.Application.Products.Models.Mappings
 {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ChiSell.Domain
+namespace ChiSell.Domain.Products
 {
     public class Product
     {

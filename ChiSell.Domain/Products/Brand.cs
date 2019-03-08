@@ -1,13 +1,14 @@
 ﻿using System;
 
-namespace ChiSell.Domain
+namespace ChiSell.Domain.Products
 {
-    public class Seller
+    public class Brand
     {
-        public Seller()
+        public Brand()
         {
             Name = string.Empty;
         }
+
         public Guid Id { get; set; }
         public string Name { get; set; }
     }

@@ -4,14 +4,48 @@
         <name>ChiSell.Api</name>
     </assembly>
     <members>
+        <member name="T:ChiShell.Api.Controllers.OrdersController">
+            <summary>
+            Orders Controller
+            </summary>
+        </member>
+        <member name="M:ChiShell.Api.Controllers.OrdersController.#ctor(MediatR.IMediator)">
+            <summary>
+            Creates a new instance of <see cref="T:ChiShell.Api.Controllers.OrdersController"/>
+            </summary>
+            <param name="mediator"></param>
+        </member>
+        <member name="M:ChiShell.Api.Controllers.OrdersController.GetAll">
+            <summary>
+            Returns all Orders
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ChiShell.Api.Controllers.PaymentsController">
+            <summary>
+            Payments Controller
+            </summary>
+        </member>
+        <member name="M:ChiShell.Api.Controllers.PaymentsController.#ctor(MediatR.IMediator)">
+            <summary>
+            Creates a new instance of <see cref="T:ChiShell.Api.Controllers.PaymentsController"/>
+            </summary>
+            <param name="mediator"></param>
+        </member>
+        <member name="M:ChiShell.Api.Controllers.PaymentsController.GetAll">
+            <summary>
+            Returns all Payments
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:ChiShell.Api.Controllers.ProductsController">
             <summary>
-            Product Controller
+            Products Controller
             </summary>
         </member>
         <member name="M:ChiShell.Api.Controllers.ProductsController.#ctor(MediatR.IMediator)">
             <summary>
-            Creates a new instance of <see cref="!:CurriculumController"/>
+            Creates a new instance of <see cref="T:ChiShell.Api.Controllers.ProductsController"/>
             </summary>
             <param name="mediator"></param>
         </member>
@@ -20,6 +54,54 @@
             Returns all products
             </summary>
             <returns></returns>
+        </member>
+        <member name="T:ChiShell.Api.Program">
+            <summary>
+            Pprogram
+            </summary>
+        </member>
+        <member name="M:ChiShell.Api.Program.Main(System.String[])">
+            <summary>
+            Main method
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:ChiShell.Api.Program.CreateHostBuilder(System.String[])">
+            <summary>
+            Web host builder
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ChiShell.Api.Startup">
+            <summary>
+            Startup class
+            </summary>
+        </member>
+        <member name="M:ChiShell.Api.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            New <see cref="T:ChiShell.Api.Startup"/>
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="P:ChiShell.Api.Startup.Configuration">
+            <summary>
+            Configuration
+            </summary>
+        </member>
+        <member name="M:ChiShell.Api.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            This method gets called by the runtime. Use this method to add services to the container.
+            For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:ChiShell.Api.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment)">
+            <summary>
+            This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
         </member>
         <member name="T:ChiSell.Api.Extensions.AutoMapperConfiguration">
             <summary>
