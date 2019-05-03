@@ -37,6 +37,15 @@ namespace ChiShell.Api.Controllers
 
         #region Endpoints
 
+        [HttpPost]
+        [ProducesResponseType(typeof(IEnumerable<OrderModel>), StatusCodes.Status201Created)]
+        public async Task<ActionResult<OrderModel>> Create(OrderModel orderModel)
+        {
+            var result = await _mediator.Send(new GetOrdersListQuery());
+            return result;
+
+        }
+
         /// <summary>
         /// Returns all Orders
         /// </summary>

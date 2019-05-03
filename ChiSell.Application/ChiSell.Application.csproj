@@ -10,7 +10,6 @@
   <ItemGroup>
     <Folder Include="Customers\Commands\" />
     <Folder Include="Customers\Queries\" />
-    <Folder Include="Orders\Commands\" />
     <Folder Include="Payments\Commands\" />
     <Folder Include="Products\Commands\" />
   </ItemGroup>

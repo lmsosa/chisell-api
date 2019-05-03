@@ -1,8 +1,9 @@
-﻿using ChiSell.Application.Customers.Models;
+﻿using ChiSell.Application.Common.Models;
+using ChiSell.Application.Customers.Models;
+using ChiSell.Application.Products.Models;
 using ChiSell.Domain.Orders;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace ChiSell.Application.Orders.Models
 {
@@ -10,7 +11,10 @@ namespace ChiSell.Application.Orders.Models
     {
         public OrderModel()
         {
-            CustomerModel = new CustomerModel();
+            Customer = new CustomerModel();
+            Items = new List<OrderItemModel>();
+            Seller = new SellerModel();
+            ShippingAddress = new AddressModel();
         }
 
         public Guid Id { get; set; }
@@ -19,6 +23,13 @@ namespace ChiSell.Application.Orders.Models
 
         public OrderState State { get; set; }
 
-        public CustomerModel CustomerModel { get; set; }
+        public CustomerModel Customer { get; set; }
+
+        public IList<OrderItemModel> Items { get; set; }
+
+        public SellerModel Seller { get; set; }
+
+        public AddressModel ShippingAddress { get; set; }
+
     }
 }
